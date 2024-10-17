@@ -1,0 +1,6 @@
+@Desafio.Entrada.Saida_HostAddress = http://localhost:5261
+
+GET {{Desafio.Entrada.Saida_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
