@@ -23,8 +23,6 @@ Para executar o projeto, você precisará ter instalado:
 - .NET SDK 7.0 ou superior (para desenvolvimento e build local)
 
 ## Configuração e Execução
-
-### 1. Clonar o Repositório
 ```bash
 git clone https://github.com/seu-usuario/desafio-entrada-saida.git
 cd desafio-entrada-saida
@@ -113,6 +111,146 @@ Para desenvolvimento local, é possível compilar e rodar a aplicação com os c
 
 dotnet build
 dotnet run --project Desafio.Entrada.Saida.Api
+
+### Exemplo de Endpoint
+POST /api/embalagem/processar-pedidos
+
+### URL Completa:
+http://localhost:5000/api/embalagem/processar-pedidos
+
+### Cabeçalhos (Headers):
+Content-Type: application/json
+
+### Corpo da Requisição (Request Body):
+Envie um JSON contendo uma lista de pedidos. Cada pedido deve conter um identificador e uma lista de produtos com suas dimensões (altura, largura e comprimento).
+
+[
+    {
+        "IdPedido": 1,
+        "Produtos": [
+            {
+                "IdProduto": 101,
+                "Altura": 20,
+                "Largura": 30,
+                "Comprimento": 40
+            },
+            {
+                "IdProduto": 102,
+                "Altura": 40,
+                "Largura": 50,
+                "Comprimento": 60
+            }
+        ]
+    },
+    {
+        "IdPedido": 2,
+        "Produtos": [
+            {
+                "IdProduto": 201,
+                "Altura": 10,
+                "Largura": 15,
+                "Comprimento": 20
+            },
+            {
+                "IdProduto": 202,
+                "Altura": 35,
+                "Largura": 25,
+                "Comprimento": 45
+            }
+        ]
+    }
+]
+### Explicações dos Campos:
+IdPedido: Identificador único do pedido.
+
+Produtos: Lista de produtos pertencentes ao pedido.
+
+IdProduto: Identificador único do produto.
+
+Altura, Largura, Comprimento: Dimensões do produto em centímetros.
+
+###Exemplo de Resposta (Response Body):
+Caso a chamada seja bem-sucedida, a API retornará um JSON contendo o resultado do processamento, com informações sobre quais caixas foram utilizadas para cada pedido.
+{
+    "PedidosProcessados": [
+        {
+            "IdPedido": 1,
+            "CaixasUtilizadas": [
+                {
+                    "IdCaixa": 1,
+                    "Altura": 30,
+                    "Largura": 40,
+                    "Comprimento": 80,
+                    "IdsProdutos": [101, 102]
+                }
+            ]
+        },
+        {
+            "IdPedido": 2,
+            "CaixasUtilizadas": [
+                {
+                    "IdCaixa": 2,
+                    "Altura": 80,
+                    "Largura": 50,
+                    "Comprimento": 40,
+                    "IdsProdutos": [201, 202]
+                }
+            ]
+        }
+    ],
+    "Sucesso": true
+}
+
+###Explicações da Resposta:
+
+PedidosProcessados: Lista de pedidos processados, cada um contendo as caixas utilizadas e os produtos alocados.
+
+IdCaixa: Identificador da caixa utilizada.
+
+Altura, Largura, Comprimento: Dimensões da caixa utilizada.
+
+IdsProdutos: Lista de IDs dos produtos que foram alocados na caixa.
+
+Sucesso: Indicador de sucesso do processamento (true ou false).
+
+###Possíveis Erros e Respostas
+Caso a chamada apresente algum problema, a API pode retornar um erro como:
+
+400 Bad Request (Exemplo: Lista de pedidos vazia ou inválida)
+
+{
+    "Mensagem": "A lista de pedidos não pode estar vazia."
+}
+
+500 Internal Server Error (Exemplo: Erro interno durante o processamento)
+
+{
+    "Mensagem": "Erro interno ao processar os pedidos."
+}
+
+
+###Testando a API
+Você pode usar Postman, Insomnia ou curl para testar:
+
+Com curl:
+curl -X POST http://localhost:5000/api/embalagem/processar-pedidos \
+-H "Content-Type: application/json" \
+-d '[
+    {
+        "IdPedido": 1,
+        "Produtos": [
+            { "IdProduto": 101, "Altura": 20, "Largura": 30, "Comprimento": 40 },
+            { "IdProduto": 102, "Altura": 40, "Largura": 50, "Comprimento": 60 }
+        ]
+    },
+    {
+        "IdPedido": 2,
+        "Produtos": [
+            { "IdProduto": 201, "Altura": 10, "Largura": 15, "Comprimento": 20 },
+            { "IdProduto": 202, "Altura": 35, "Largura": 25, "Comprimento": 45 }
+        ]
+    }
+]'
 
 ### Melhorias Futuras
 Adicionar testes unitários e de integração para garantir a robustez do sistema.
