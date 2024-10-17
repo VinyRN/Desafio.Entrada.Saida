@@ -1,5 +1,6 @@
 # Desafio Entrada Saída
 
+
 ## Descrição
 O **Desafio Entrada Saída** é uma API desenvolvida em ASP.NET Core que processa pedidos, determina a melhor forma de embalar produtos em caixas pré-fabricadas e registra logs e eventos usando Elasticsearch e RabbitMQ. O projeto é modular, dividido em várias bibliotecas para facilitar a manutenção e escalabilidade.
 
@@ -10,6 +11,26 @@ O projeto está organizado em várias bibliotecas e serviços:
 - **Desafio.Entrada.Saida.Servico**: Implementações de serviços para processamento de pedidos e embalagem de produtos.
 - **Desafio.Entrada.Saida.Infraestrutura.Repositorios**: Implementações de repositórios para acesso a dados.
 - **Desafio.Entrada.Saida.Queue**: Integração com o RabbitMQ para publicação e consumo de mensagens.
+- **Desafio.Entrada.Saida.Helper: Rotinas de apoio e reutilização.
+
+## Segurança
+O projeto utiliza autenticação por JWT.
+Para execução de quelquer endpoint é preciso executar o endpoint Authorize/Token, passando os parâmetros abaixo.
+
+**"ApiKeyToken":** "292b9a08-6dc3-41b2-aee2-2f6de36143da"
+**"ApiKeyUser":** "08d88b97-9dcd-4809-99b5-f610266d43cc"
+
+**"Client_id":** "4bd4a0bf-5f18-4126-bf37-06e2e33d3117"
+**"Client_secret":** "ce85b99cc46752fffee35cab9a7b0278abb4c2d2055cff685af4912c49490f8d"
+
+Será gerado um token que deve ser utilzado no botão abaixo.
+![image](https://github.com/user-attachments/assets/44b444cb-60be-45d4-b4d7-63b8e4b94274)
+
+Irá abrir a tela abaixo para a inclusão do token gerado.
+
+![image](https://github.com/user-attachments/assets/70a1df3a-9d99-4efa-bc0f-74fef4619bec)
+
+
 
 ## Tecnologias Utilizadas
 - **ASP.NET Core** 7.0
