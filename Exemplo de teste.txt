@@ -1,0 +1,16 @@
+Testando o Controller
+Você pode testar o controller usando ferramentas como Postman ou Insomnia:
+
+URL: POST http://localhost:5000/api/embalagem/processar-pedidos
+Body: Um JSON representando a lista de pedidos, por exemplo:
+json
+Copiar código
+[
+    {
+        "IdPedido": 1,
+        "Produtos": [
+            { "IdProduto": 101, "Altura": 20, "Largura": 30, "Comprimento": 40 },
+            { "IdProduto": 102, "Altura": 40, "Largura": 50, "Comprimento": 60 }
+        ]
+    }
+]

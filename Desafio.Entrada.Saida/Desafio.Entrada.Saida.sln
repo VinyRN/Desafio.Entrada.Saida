@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.Entrada.Saida", "Desafio.Entrada.Saida.csproj", "{D4927AA3-A374-4518-AC48-48DFC72BE00A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio.Entrada.Saida", "Desafio.Entrada.Saida.csproj", "{D4927AA3-A374-4518-AC48-48DFC72BE00A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.Entrada.Saida.Dominio", "..\Desafio.Entrada.Saida.Dominio\Desafio.Entrada.Saida.Dominio.csproj", "{39E4136B-253C-4E59-8E4F-EB5BB15BE13E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio.Entrada.Saida.Dominio", "..\Desafio.Entrada.Saida.Dominio\Desafio.Entrada.Saida.Dominio.csproj", "{39E4136B-253C-4E59-8E4F-EB5BB15BE13E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.Entrada.Saida.Infraestrutura", "..\Desafio.Entrada.Saida.Infraestrutura\Desafio.Entrada.Saida.Infraestrutura.csproj", "{1CCAC9E6-1140-4EA0-A0CA-7F671B74894E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio.Entrada.Saida.Infraestrutura", "..\Desafio.Entrada.Saida.Infraestrutura\Desafio.Entrada.Saida.Infraestrutura.csproj", "{1CCAC9E6-1140-4EA0-A0CA-7F671B74894E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.Entrada.Saida.Servico", "..\Desafio.Entrada.Saida.Servico\Desafio.Entrada.Saida.Servico.csproj", "{1B5AC505-4A4A-4ED5-9158-EDB4012670C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio.Entrada.Saida.Servico", "..\Desafio.Entrada.Saida.Servico\Desafio.Entrada.Saida.Servico.csproj", "{1B5AC505-4A4A-4ED5-9158-EDB4012670C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.Entrada.Saida.Queue", "..\Desafio.Entrada.Saida.Queue\Desafio.Entrada.Saida.Queue.csproj", "{9E8F5F3D-2A57-4DA4-A7A9-63702313F833}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafio.Entrada.Saida.Queue", "..\Desafio.Entrada.Saida.Queue\Desafio.Entrada.Saida.Queue.csproj", "{9E8F5F3D-2A57-4DA4-A7A9-63702313F833}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio.Entrada.Saida.Helper", "..\Desafio.Entrada.Saida.Helper\Desafio.Entrada.Saida.Helper.csproj", "{D7EBB905-9156-4408-A4AC-5B7A1DE0CC6C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{9E8F5F3D-2A57-4DA4-A7A9-63702313F833}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E8F5F3D-2A57-4DA4-A7A9-63702313F833}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E8F5F3D-2A57-4DA4-A7A9-63702313F833}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7EBB905-9156-4408-A4AC-5B7A1DE0CC6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7EBB905-9156-4408-A4AC-5B7A1DE0CC6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7EBB905-9156-4408-A4AC-5B7A1DE0CC6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7EBB905-9156-4408-A4AC-5B7A1DE0CC6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,11 +1,8 @@
-﻿using Desafio.entrada.saida.Dominio.DTO;
-using Desafio.entrada.saida.Dominio;
-using Desafio.Entrada.Saida.Dominio;
+﻿using Desafio.entrada.saida.Dominio;
+using Desafio.entrada.saida.Dominio.DTO;
 using Desafio.Entrada.Saida.Dominio.DTO.Request;
-using Desafio.Entrada.Saida.Dominio.DTO.Requests;
-using Desafio.Entrada.Saida.Dominio.DTO.Response;
-using Desafio.Entrada.Saida.Queue;
 using Desafio.Entrada.Saida.Queue.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
 
@@ -13,6 +10,7 @@ namespace Desafio.Entrada.Saida.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class EmbalagemController : ControllerBase
     {
         private readonly IEmbalagemService _embalagemService;
